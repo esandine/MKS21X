@@ -1,0 +1,8 @@
+git clone <url> :  Clones a file from a url
+git add : Makes the file trackede by github
+git commit -m <message>: Saves the changes with the message
+git push : pushes a file to github
+git pull : pulls a file from github
+
+
+
