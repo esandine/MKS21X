@@ -1,8 +1,14 @@
 git clone <url> :  Clones a file from a url
-git add : Makes the file trackede by github
+git add <file> : Makes the file trackede by github
 git commit -m <message>: Saves the changes with the message
-git push : pushes a file to github
-git pull : pulls a file from github
+git push <repository> : pushes a repository to github
+git pull <repository> : pulls a repository from github
+git diff : Shows all the differences between commits
+git checkout : Restores file tree
+git show : Shows the coments for the commits
+git reset : resets back to a specific commit
+git status : shows the current status f the repository
+git log : shows the log of commits
 
 
 
