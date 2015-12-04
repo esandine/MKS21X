@@ -10,5 +10,5 @@ git reset : resets back to a specific commit
 git status : shows the current status f the repository
 git log : shows the log of commits
 
-
+THIS IS UTTER BOGUS
 
