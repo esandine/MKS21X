@@ -1,0 +1,57 @@
+import javax.swing.*;
+import java.awt.*;//NEW STUFF!
+import java.awt.event.*;
+
+public class TempConversionWindow extends JFrame implements ActionListener{
+    private Container pane;
+    private JLabel j;
+    private JTextField t;
+
+    public TempConversionWindow() {
+	this.setTitle("TempConversionWindow");
+	this.setSize(600,400);
+	this.setLocation(100,100);
+	this.setDefaultCloseOperation(
+				      EXIT_ON_CLOSE);
+
+	pane = this.getContentPane();
+	pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
+
+	JButton b = new JButton("toCelcius");
+	b.addActionListener(this);
+	b.setActionCommand("toCelcius");
+	JButton b2 = new JButton("toFahrenheit");
+	b2.addActionListener(this);
+	b2.setActionCommand("toFahrenheit");
+
+
+	t = new JTextField(10);
+
+	j = new JLabel("");
+	pane.add(t);
+	pane.add(b);
+	pane.add(b2);
+	pane.add(j);
+    }
+    public static double CtoF(double celcius){
+	return 32*(9.0/5)*celcius;
+    }
+    public static double FtoC(double fahrenheit){
+	return (fahrenheit-32)*5/9;
+    }
+    public void actionPerformed(ActionEvent e){
+	String event = e.getActionCommand();
+	if(event.equals("toCelcius")){
+	    String s = t.getText();
+	    try{
+		j.setText(""+FtoC((double)Integer.parseInt(s)));
+	    }catch(NumberFormatException ee){
+		j.setText("Invalid temperature format");
+	    }
+	}
+	    //	if(event.equals("NotByte")){
+	    //
+	    //}
+    }
+}
+
