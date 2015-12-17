@@ -34,7 +34,7 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 	pane.add(j);
     }
     public static double CtoF(double celcius){
-	return 32*(9.0/5)*celcius;
+	return 32+(9.0/5)*celcius;
     }
     public static double FtoC(double fahrenheit){
 	return (fahrenheit-32)*5/9;
@@ -49,9 +49,15 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 		j.setText("Invalid temperature format");
 	    }
 	}
-	    //	if(event.equals("NotByte")){
-	    //
-	    //}
+	if(event.equals("toFahrenheit")){
+	    String s = t.getText();
+	    try{
+		j.setText(""+CtoF((double)Integer.parseInt(s)));
+	    }catch(NumberFormatException ee){
+		j.setText("Invalid temperature format");
+	    }
+	}
+
     }
 }
 
