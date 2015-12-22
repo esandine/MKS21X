@@ -44,14 +44,20 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 	if(event.equals("toCelcius")){
 	    String s = t.getText();
 	    try{
-		j.setText(FtoC((double)Integer.parseInt(s)));
+		j.setText(""+FtoC((double)Integer.parseInt(s)));
 	    }catch(NumberFormatException ee){
 		j.setText("Invalid temperature format");
 	    }
 	}
-	    //	if(event.equals("NotByte")){
-	    //
-	    //}
+	if(event.equals("toFahrenheit")){
+	    String s = t.getText();
+	    try{
+		j.setText(""+CtoF((double)Integer.parseInt(s)));
+	    }catch(NumberFormatException ee){
+		j.setText("Invalid temperature format");
+	    }
+	}
+
     }
 }
 
