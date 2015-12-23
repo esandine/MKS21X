@@ -1,5 +1,6 @@
-public class BarCode/* implements Comparable*/{
+public class BarCode implements Comparable{
     // instance variables
+    private String[]pcodes={":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::","||:::"};
     private String _zip;
     private int _checkDigit;
 
@@ -36,18 +37,28 @@ public class BarCode/* implements Comparable*/{
     //postcondition: format zip + check digit + barcode 
     //ex. "084518  |||:::|::|::|::|:|:|::::|||::|:|"      */
     public String toString(){
-	return _zip + _checkDigit;
+	String retStr="|";
+	for(int i = 0;i<_zip.length();i++){
+	    retStr+=pcodes[Integer.parseInt(_zip.substring(i,i+1))+1];
+	}
+	retStr+=pcodes[Integer.parseInt(_zip.substring(4))-1];
+	retStr+=pcodes[_checkDigit-1];
+	retStr+= "|";
+	return retStr;
     }
 
-    /*
-    public boolean equals(Object other){}
+    public boolean equals(Comparable other){
+	return compareTo(other)==0;
+    }
     // postcondition: false if the object is not a BarCode, 
     // false if it is a non-matching barcode
     // true when they match.
 
-    */
+
     public int compareTo(Comparable other){
-	return 0;
+	return toString().compareTo(other.toString());
     }
     // postcondition: compares the zip + checkdigit 
+    public int compareTo(Object other){
+    }
 }

@@ -1,10 +1,12 @@
 public class Driver{
     public static void main(String[] args){
 	try{
-	    BarCode b1 = new BarCode("39495");
+	    BarCode b1 = new BarCode("08451");
 	    System.out.println(b1);
 	    BarCode b2 = new BarCode(b1);
 	    System.out.println(b2);
+	    System.out.println(b1.compareTo("fish"));
+	    System.out.println(b1.compareTo(b2));
 	    //	    BarCode b2 = new BarCode("00001");
 	    //System.out.println("Works?");
 	    //BarCode b3 = new BarCode("3949");
