@@ -7,8 +7,8 @@ public class Driver{
 	    //System.out.println("Works?");
 	    //BarCode b3 = new BarCode("3949");
 	    //System.out.println("Works?");
-	    BarCode b4 = new BarCode("3949345");
-	    System.out.println("Works?");
+	    //BarCode b4 = new BarCode("3949345");
+	    //System.out.println("Works?");
 	    BarCode b5 = new BarCode("3949a");
 	    System.out.println("Works?");
 	}catch(RuntimeException e){

@@ -12,19 +12,26 @@ public class BarCode/* implements Comparable*/{
 	if(!(zip.length()==5)){
 	    throw new RuntimeException();
 	}
-	for(int i = 0;i<zip.length()-1;i++){
-	    _checkDigit+=Integer.parseInt(zip.substring(i,i+1));
-	}
-	_checkDigit+=Integer.parseInt(zip.substring(4));
-	_checkDigit/=10;
 	_zip=zip;
-    }/*
+	_checkDigit=checkSum();
+    }
     // postcondition: Creates a copy of a bar code.
-    public BarCode(BarCode x){}
-
+    public BarCode(BarCode x){
+	_zip=x._zip;
+	_checkDigit=x._checkDigit;
+    }
 
     //post: computes and returns the check sum for _zip
-    private int checkSum(){}
+    private int checkSum(){
+	int retDig=0;
+	for(int i = 0;i<_zip.length()-1;i++){
+	    retDig+=Integer.parseInt(_zip.substring(i,i+1));
+	}
+	retDig+=Integer.parseInt(_zip.substring(4));
+	retDig%=10;
+	return retDig;
+
+    }
 
     //postcondition: format zip + check digit + barcode 
     //ex. "084518  |||:::|::|::|::|:|:|::::|||::|:|"      */
