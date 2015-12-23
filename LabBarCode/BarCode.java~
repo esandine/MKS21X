@@ -16,7 +16,6 @@ public class BarCode/* implements Comparable*/{
 	    _checkDigit+=Integer.parseInt(zip.substring(i,i+1));
 	}
 	_checkDigit+=Integer.parseInt(zip.substring(4));
-	_checkDigit/=10;
 	_zip=zip;
     }/*
     // postcondition: Creates a copy of a bar code.
