@@ -60,5 +60,9 @@ public class BarCode implements Comparable{
     }
     // postcondition: compares the zip + checkdigit 
     public int compareTo(Object other){
+	if(other instanceof Comparable){
+	    return compareTo(other);
+	}
+	return -1;
     }
 }
