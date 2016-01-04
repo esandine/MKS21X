@@ -42,8 +42,8 @@ public class Sorts{
 	int minIndex;
 	for(int i = 0;i<ary.length;i++){
 	    minValue=ary[i];
-	    minIndex=i;
-	    for(int index=i;index<ary.length;index++){
+	    minIndex=0;
+	    for(int index=0;index<ary.length;index++){
 		if(ary[index]<minValue){
 		    minValue = ary[index];
 		    minIndex=index;
