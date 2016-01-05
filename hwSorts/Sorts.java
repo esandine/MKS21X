@@ -1,4 +1,5 @@
 public class Sorts{
+    private static boolean debug = true;
     public static void printArray(int[]data){
 	String retStr="";
 	retStr+="[";
@@ -14,6 +15,9 @@ public class Sorts{
 	System.out.println(retStr);
     }
     public static void insertionSort(int[]data){
+	if(debug){
+	    System.out.println("Insertion Sort:");
+	}
 	int tempValue=0;
 	int tempIndex=0;
 	for(int i = 1;i<data.length;i++){
@@ -29,15 +33,19 @@ public class Sorts{
 		tempIndex-=1;
 	    }
 	    data[tempIndex]=tempValue;
+	if(debug){
+		  printArray(data);
 	}
-		
-		
+	}
 	//your code here to make data re-order its elements
 	//from least to greatest just like we did in class
 	//same algorithm as the way you created your OrderedSuperArray
     }
 
     public static void selectionSort(int[] ary){
+	if(debug){
+	    System.out.println("Selection Sort:");
+	}
 	int minValue;
 	int minIndex;
 	for(int i = 0;i<ary.length;i++){
@@ -51,6 +59,9 @@ public class Sorts{
 	    }
 	    ary[minIndex]=ary[i];
 	    ary[i]=minValue;
+	    if(debug){
+		printArray(ary);
+	    }
 	}
     }
 }

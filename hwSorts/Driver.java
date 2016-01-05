@@ -8,8 +8,5 @@ public class Driver{
 	Sorts.printArray(arrayName2);
 	Sorts.selectionSort(arrayName2);
 	Sorts.printArray(arrayName2);
-	int[] a2 = {};
-	Sorts.insertionSort( arrayName);
-	Sorts.printArray( a2);
     }
 }
