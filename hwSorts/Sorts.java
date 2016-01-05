@@ -13,7 +13,7 @@ public class Sorts{
 	retStr+="]";
 	System.out.println(retStr);
     }
-    public static void insertion(int[]data){
+    public static void insertionSort(int[]data){
 	int tempValue=0;
 	int tempIndex=0;
 	for(int i = 1;i<data.length;i++){
@@ -37,7 +37,7 @@ public class Sorts{
 	//same algorithm as the way you created your OrderedSuperArray
     }
 
-    public static void selection(int[] ary){
+    public static void selectionSort(int[] ary){
 	int minValue;
 	int minIndex;
 	for(int i = 0;i<ary.length;i++){
