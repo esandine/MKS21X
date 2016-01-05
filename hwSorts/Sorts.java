@@ -64,4 +64,9 @@ public class Sorts{
 	    }
 	}
     }
+    public static void bubbleSort(int[] data){
+	for(int i = 1;i<data.length;i++){
+	    for(int index = 0;i<data.length-i;index++){
+		if(data[index]>data[index+1])
+    }
 }
