@@ -8,5 +8,9 @@ public class Driver{
 	Sorts.printArray(arrayName2);
 	Sorts.selectionSort(arrayName2);
 	Sorts.printArray(arrayName2);
+	int[] arrayName3 = { 8, 6, 7, 5, 3, 0, 9};
+	Sorts.printArray(arrayName3);
+	Sorts.bubbleSort(arrayName3);
+	Sorts.printArray(arrayName3);
     }
 }

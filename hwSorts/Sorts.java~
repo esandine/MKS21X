@@ -1,4 +1,5 @@
 public class Sorts{
+    private static boolean debug = true;
     public static void printArray(int[]data){
 	String retStr="";
 	retStr+="[";
@@ -13,7 +14,10 @@ public class Sorts{
 	retStr+="]";
 	System.out.println(retStr);
     }
-    public static void insertion(int[]data){
+    public static void insertionSort(int[]data){
+	if(debug){
+	    System.out.println("Insertion Sort:");
+	}
 	int tempValue=0;
 	int tempIndex=0;
 	for(int i = 1;i<data.length;i++){
@@ -29,21 +33,25 @@ public class Sorts{
 		tempIndex-=1;
 	    }
 	    data[tempIndex]=tempValue;
+	if(debug){
+		  printArray(data);
 	}
-		
-		
+	}
 	//your code here to make data re-order its elements
 	//from least to greatest just like we did in class
 	//same algorithm as the way you created your OrderedSuperArray
     }
 
-    public static void selection(int[] ary){
+    public static void selectionSort(int[] ary){
+	if(debug){
+	    System.out.println("Selection Sort:");
+	}
 	int minValue;
 	int minIndex;
 	for(int i = 0;i<ary.length;i++){
 	    minValue=ary[i];
-	    minIndex=0;
-	    for(int index=0;index<ary.length;index++){
+	    minIndex=i;
+	    for(int index=i;index<ary.length;index++){
 		if(ary[index]<minValue){
 		    minValue = ary[index];
 		    minIndex=index;
@@ -51,6 +59,21 @@ public class Sorts{
 	    }
 	    ary[minIndex]=ary[i];
 	    ary[i]=minValue;
+	    if(debug){
+		printArray(ary);
+	    }
+	}
+    }
+    public static void bubbleSort(int[] data){
+	int smaller;
+	for(int i = 1;i<data.length;i++){
+	    for(int index = 0;index<data.length-i;index++){
+		if(data[index]>data[index+1]){
+		    smaller = data[index+1];
+		    data[index+1]=data[index];
+		    data[index]=smaller;
+		}
+	    }
 	}
     }
 }

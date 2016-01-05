@@ -65,8 +65,23 @@ public class Sorts{
 	}
     }
     public static void bubbleSort(int[] data){
+	if(debug){
+	    System.out.println("Bubble Sort:");
+	}
+
+	int smaller;
 	for(int i = 1;i<data.length;i++){
-	    for(int index = 0;i<data.length-i;index++){
-		if(data[index]>data[index+1])
+	    for(int index = 0;index<data.length-i;index++){
+		if(data[index]>data[index+1]){
+		    smaller = data[index+1];
+		    data[index+1]=data[index];
+		    data[index]=smaller;
+		}
+	    }
+	    if(debug){
+		 printArray(data);
+	    }
+
+	}
     }
 }
