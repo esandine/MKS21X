@@ -1,5 +1,5 @@
 public class Sorts{
-    private static boolean debug = true;
+    private static boolean debug = false;
     public static void printArray(int[]data){
 	String retStr="";
 	retStr+="[";
@@ -83,5 +83,15 @@ public class Sorts{
 	    }
 
 	}
+    }
+    public static void fillRandom(int[] data){
+	for(int i = 0;i<data.length;i++){
+	    data[i]=(int)(Integer.MAX_VALUE*Math.random());
+	}
+    }
+    public static void swap(int[] data,int i1,int i2){
+	int storage = data[i2];
+	data[i2]=data[i1];
+	data[i1]=storage;
     }
 }
